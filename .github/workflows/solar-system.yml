@@ -111,7 +111,7 @@ jobs:
         - name: Set kubectl context
           uses: azure/k8s-set-context@v1
           with:
-            kubeconfig: ${{ secrets.KUBE_CONFIG }}
+            kubeconfig: ${{ secrets.KUBECONFIG }}
         
         - name: Verify kubectl setup
           run: kubectl version --short -o yaml
