@@ -123,7 +123,7 @@ jobs:
         - name: Replace Placeholders
           uses: cschleiden/replace-tokens@v1
           with:
-            files: 'kubernetes/*.yaml'
+            files: 'kubernetes/${{ vars.NAMESPACE }}/*.yaml'
             tokenPrefix: '_{_'
             tokenSuffix: '_}_'
           env:
