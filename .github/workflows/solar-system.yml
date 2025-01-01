@@ -114,8 +114,8 @@ jobs:
           with:
             kubeconfig: ${{ secrets.KUBECONFIG }}
         
-        - name: Verify kubectl setup
-          run: kubectl version --short -o yaml
+        # - name: Verify kubectl setup
+        #   run: kubectl version --short -o yaml
 
         - name: Fetch the NGINX INGRESS CONTROLLER IP Address and save it as a GitHub Environment Variable
           run: echo 'INGRESS_IP=$(kubectl -n ingress-nginx get services ingress-nginx-controller -o jsonpath="{.status.loadBalancer.ingress[0].ip}")' >> $GITHUB_ENV
